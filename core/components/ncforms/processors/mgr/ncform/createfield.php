@@ -12,6 +12,14 @@
 if ($modx->error->hasError()) { return $modx->error->failure(); }
 $ncform = $modx->newObject('NcFormField');
 
+// get last id for order_id
+$stmt = $modx->query("SELECT MAX(id) FROM {$modx->getTableName('NcFormField')}");
+if($stmt) {
+	$maxId = (integer)$stmt->fetch(PDO::FETCH_COLUMN);
+	$stmt->closeCursor();
+	$scriptProperties['order_id'] = !empty($maxId) ? ++$maxId : 0;
+}
+
 // set 'input_validate'
 $scriptProperties['input_validate'] = !empty($scriptProperties['input_validate']) ? 1 : 0;
 // set 'multiple'
