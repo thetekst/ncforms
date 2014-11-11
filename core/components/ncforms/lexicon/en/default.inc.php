@@ -1,0 +1,25 @@
+<?php
+$_lang['ncforms.management'] 		= 'NcForms Management';
+$_lang['ncforms.tabtitle'] 			= 'General';
+$_lang['ncforms.description'] = 'Form plugin';
+$_lang['ncform'] = 'NcForm';
+$_lang['ncforms'] = 'NcForms';
+$_lang['ncforms.id'] = 'ID--';
+$_lang['ncforms.name'] = 'Name--';
+$_lang['ncforms.savemethod'] = 'save method';
+$_lang['ncforms.desc'] = 'Manage your ncforms here.';
+$_lang['ncforms.doodle_err_ae'] = 'A ncform with that name already exists.';
+$_lang['ncforms.doodle_err_nf'] = 'NcForm not found.';
+$_lang['ncforms.doodle_err_ns'] = 'NcForm not specified.';
+$_lang['ncforms.doodle_err_ns_name'] = 'Please specify a name for the ncform.';
+$_lang['ncforms.doodle_err_remove'] = 'An error occurred while trying to remove the ncform.';
+$_lang['ncforms.doodle_err_save'] = 'An error occurred while trying to save the ncform.';
+$_lang['ncforms.doodle_create'] = 'Create New NcForm';
+$_lang['ncforms.doodle_remove'] = 'Remove NcForm';
+$_lang['ncforms.doodle_remove_confirm'] = 'Are you sure you want to remove this ncform?';
+$_lang['ncforms.doodle_update'] = 'Update NcForm';
+$_lang['ncforms.downloads'] = 'Downloads';
+$_lang['ncforms.location'] = 'Location';
+$_lang['ncforms.management_desc'] = 'Manage your ncforms here. You can edit them by either double-clicking on the grid or right-clicking on the respective row.';
+$_lang['ncforms.search...'] = 'Search...';
+$_lang['ncforms.top_downloaded'] = 'Top Downloaded NcForms';

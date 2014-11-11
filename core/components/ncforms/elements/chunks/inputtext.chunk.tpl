@@ -1,0 +1,1 @@
+<input type="[[+type]]" class="form-control text" name="field[[+id]]" id="field[[+id]]" [[+placeholder:notempty=`placeholder="[[+placeholder]]"`]] [[+input_value:notempty=`value="[[+input_value]]"`]] size="40">

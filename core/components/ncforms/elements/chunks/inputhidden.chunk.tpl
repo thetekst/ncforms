@@ -1,0 +1,1 @@
+<input type="[[+type]]" name="field[[+id]]" id="field[[+id]]" value="[[+input_value]]">

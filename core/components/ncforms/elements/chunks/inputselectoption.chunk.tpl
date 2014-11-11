@@ -1,0 +1,1 @@
+<option value="[[+input_value]]" [[+input_value:isequalto=`[[+input_default_value]]`:then=`selected="selected"`]]>[[+header]]</option>

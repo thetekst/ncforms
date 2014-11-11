@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<model package="ncforms" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
+	
+	<object class="NcForm" table="ncforms" extends="xPDOObject">
+        <field key="id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" index="pk"  generated="native" />
+        <field key="name" dbtype="text" phptype="string" null="true" />
+        <field key="save_method" dbtype="enum" phptype="string" null="false" precision="'database','database_email'" default="database_email" />
+        <field key="redirect_or_msg" dbtype="enum" phptype="string" null="false" precision="'redirect','success_message'" default="success_message" />
+		<field key="email" dbtype="text" phptype="string" null="true" default="" />
+        <field key="success_message" dbtype="text" phptype="string" null="true" default="" />
+		<field key="spam_hook" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" />
+		<field key="recaptcha_hook" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="1" />
+		<field key="redirect_id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="true" default="" />
+		<field key="identifier" dbtype="varchar" precision="255" phptype="string" null="true" default="" />
+        <field key="hooks" dbtype="text" precision="255" phptype="string" null="true" default="" />
+        <field key="action_button" dbtype="varchar" precision="255" phptype="string" null="true" default="" />
+        <field key="properties" dbtype="text" precision="255" phptype="string" null="true" default="" />
+        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+                <column key="id" collation="A" null="false" />
+        </index>
+        <composite alias="Fields" class="NcFormField" local="id" foreign="form_id" cardinality="many" owner="local" />
+	</object>
+	<object class="NcFormField" table="ncforms_fields" extends="xPDOObject">
+			<field key="id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" index="pk"  generated="native" />
+			<field key="form_id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="true" />
+			<field key="label" dbtype="text" phptype="string" null="true" />
+			<field key="placeholder" dbtype="text" phptype="string" null="true" />
+			<field key="multiple" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+			<field key="input_validate" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+			<field key="input_name" dbtype="text" phptype="string" null="true" />
+			<field key="input_value" dbtype="text" phptype="string" null="true" />
+			<field key="input_default_value" dbtype="text" phptype="string" null="true" />
+			<field key="input_wrapper_tag_id" dbtype="text" phptype="string" null="true" />
+			<field key="type" dbtype="enum" phptype="string" null="false" precision="'text','textarea','select','checkbox','radio','hidden'" default="text" />
+			<field key="order_id" dbtype="int" precision="10" phptype="integer" null="true" default="" />
+
+			<index alias="order_id" name="order_id" primary="false" unique="false" type="BTREE">
+				<column key="order_id" length="" collation="A" null="false" />
+			</index>
+			<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+					<column key="id" collation="A" null="false" />
+			</index>
+			<aggregate alias="Form" class="NcForm" local="form_id" foreign="id" cardinality="one" owner="foreign" />
+	</object>
+	<object class="NcFormSentData" table="ncforms_sent_data" extends="xPDOObject">
+		<field key="id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="form_id" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="true" />
+		<field key="sent_on" dbtype="datetime" phptype="datetime" null="true" index="index" />
+		<field key="data" dbtype="text" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+				<column key="id" collation="A" null="false" />
+		</index>
+		<index alias="idx_sent_on" name="idx_sent_on" primary="false" unique="false" type="BTREE" >
+			<column key="sent_on" length="" collation="A" null="true" />
+		</index>
+	</object>
+</model>
