@@ -83,7 +83,7 @@ foreach ($ncfields as $field) {
 	$tmp = $controls = '';
 	
 	// собираем строку для валидации
-	if($formArray['input_validate']) {
+	if($formArray['required']) {
 		$validate .= $reqSeparator.sprintf('field%s:requiredCustom=^%s^', $formArray['id'], $formArray['error_msg']);
 	}
 	
@@ -102,7 +102,7 @@ foreach ($ncfields as $field) {
 //				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 //				'input_name'		=> $formArray['input_name'],
 				'label'				=> $formArray['label'],
-				'input_validate'	=> $formArray['input_validate'],
+				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
 			break;
@@ -139,7 +139,7 @@ foreach ($ncfields as $field) {
 //					'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 					'label' 			=> $formArray['label'],
 //					'input_name'		=> $formArray['input_name'],
-					'input_validate'	=> $formArray['input_validate'],
+					'required'			=> $formArray['required'],
 					'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
 			break;
@@ -184,7 +184,7 @@ foreach ($ncfields as $field) {
 //				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 				'label' 			=> $formArray['label'],
 //				'input_name'		=> $formArray['input_name'],
-				'input_validate'	=> $formArray['input_validate'],
+				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
 			
@@ -234,7 +234,7 @@ foreach ($ncfields as $field) {
 //				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 				'label' 			=> $formArray['label'],
 //				'input_name'		=> $formArray['input_name'],
-				'input_validate'	=> $formArray['input_validate'],
+				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
 			
@@ -248,7 +248,7 @@ foreach ($ncfields as $field) {
 //				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 //				'input_name'		=> $formArray['input_name'],
 				'label'				=> $formArray['label'],
-				'input_validate'	=> $formArray['input_validate'],
+				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 			));
 			break;

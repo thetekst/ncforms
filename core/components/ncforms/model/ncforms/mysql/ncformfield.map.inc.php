@@ -11,7 +11,7 @@ $xpdo_meta_map['NcFormField']= array (
     'label' => NULL,
     'placeholder' => NULL,
     'multiple' => 0,
-    'input_validate' => 0,
+    'required' => 0,
     'input_name' => NULL,
     'input_value' => NULL,
     'input_default_value' => NULL,
@@ -61,7 +61,7 @@ $xpdo_meta_map['NcFormField']= array (
       'null' => false,
       'default' => 0,
     ),
-    'input_validate' => 
+    'required' => 
     array (
       'dbtype' => 'int',
       'precision' => '1',

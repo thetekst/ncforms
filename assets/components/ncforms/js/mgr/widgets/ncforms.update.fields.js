@@ -53,9 +53,9 @@ NcForms.window.UpdateNcFields = function(config) {
 				,anchor: '100%'
 			},{
 				xtype: 'checkbox'
-				,id: 'ncforms.input_validate-' + config.id
-				,fieldLabel: ('Input validate')
-				,name: 'input_validate'
+				,id: 'ncforms.required-' + config.id
+				,fieldLabel: ('Required')
+				,name: 'required'
 				,anchor: '100%'
 			},{
 				xtype: 'textfield'
@@ -80,7 +80,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 	fieldSets: function (field, record, i) {
         var placeholder 		= Ext.getCmp('ncforms.placeholder-' + this.config.id);
         var multiple 			= Ext.getCmp('ncforms.multiple-' + this.config.id);
-        var inputValidate 		= Ext.getCmp('ncforms.input_validate-' + this.config.id);
+        var required 		= Ext.getCmp('ncforms.required-' + this.config.id);
         var inputDefaultValue 	= Ext.getCmp('ncforms.input_default_value-' + this.config.id);
 		var label 				= Ext.getCmp('ncforms.label-' + this.config.id);
 		var errorMsg 			= Ext.getCmp('ncforms.error_msg-' + this.config.id);
@@ -90,7 +90,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 			case 'select':
 				placeholder.hide();
 				multiple.show();
-				inputValidate.show();
+				required.show();
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
@@ -100,7 +100,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 			case 'radio':
 				placeholder.hide();
 				multiple.hide();
-				inputValidate.show();
+				required.show();
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
@@ -108,7 +108,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 			case 'hidden':
 				placeholder.hide();
 				multiple.hide();
-				inputValidate.hide();
+				required.hide();
 				inputDefaultValue.hide();
 				label.hide();
 				errorMsg.hide();
@@ -118,7 +118,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 				// text, textarea
                 placeholder.show();
 				multiple.hide();
-				inputValidate.show();
+				required.show();
 				inputDefaultValue.hide();
 				label.show();
 				errorMsg.show();

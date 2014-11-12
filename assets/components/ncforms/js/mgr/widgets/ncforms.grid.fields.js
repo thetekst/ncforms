@@ -23,7 +23,7 @@ NcForms.grid.NcFields = function(config) {
 			,'type'
 			,'order_id'
 			,'multiple'
-			,'input_validate'
+			,'required'
 			,'placeholder'
 			,'error_msg'
 		]

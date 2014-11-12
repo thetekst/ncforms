@@ -26,7 +26,7 @@
 			<field key="label" dbtype="text" phptype="string" null="true" />
 			<field key="placeholder" dbtype="text" phptype="string" null="true" />
 			<field key="multiple" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-			<field key="input_validate" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+			<field key="required" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 			<field key="input_name" dbtype="text" phptype="string" null="true" />
 			<field key="input_value" dbtype="text" phptype="string" null="true" />
 			<field key="input_default_value" dbtype="text" phptype="string" null="true" />

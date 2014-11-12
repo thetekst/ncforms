@@ -5,8 +5,8 @@ if (empty($scriptProperties['id'])) return $modx->error->failure($modx->lexicon(
 $ncfields = $modx->getObject('NcFormField', $scriptProperties['id']);
 if (empty($ncfields)) return $modx->error->failure($modx->lexicon('ncforms.ncfields_err_nf'));
 
-// set 'input_validate'
-$scriptProperties['input_validate'] = !empty($scriptProperties['input_validate']) ? 1 : 0;
+// set 'required'
+$scriptProperties['required'] = !empty($scriptProperties['required']) ? 1 : 0;
 // set 'multiple'
 $scriptProperties['multiple'] = !empty($scriptProperties['multiple']) ? 1 : 0;
 
