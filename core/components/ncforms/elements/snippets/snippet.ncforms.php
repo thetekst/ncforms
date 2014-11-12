@@ -84,7 +84,7 @@ foreach ($ncfields as $field) {
 	
 	// собираем строку для валидации
 	if($formArray['input_validate']) {
-		$validate .= $reqSeparator.sprintf('field%s',$formArray['id']).':required';
+		$validate .= $reqSeparator.sprintf('field%s:requiredCustom=^%s^', $formArray['id'], $formArray['error_msg']);
 	}
 	
 	/* $fieldMgr = new FieldMgr($formArray['type']);

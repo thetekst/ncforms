@@ -60,6 +60,12 @@ NcForms.window.CreateNcField = function(config) {
 			,fieldLabel: ('Input validate')
 			,name: 'input_validate'
 			,anchor: '100%'
+		},{
+			xtype: 'textfield'
+			,id: 'ncforms.error_msg-' + config.id
+			,fieldLabel: ('Error message')
+			,name: 'error_msg'
+			,anchor: '100%'
 		}]
     });
     NcForms.window.CreateNcField.superclass.constructor.call(this,config);
@@ -71,6 +77,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
         var inputValidate 		= Ext.getCmp('ncforms.input_validate-' + this.config.id);
 		var inputDefaultValue 	= Ext.getCmp('ncforms.input_default_value-' + this.config.id);
 		var label 				= Ext.getCmp('ncforms.label-' + this.config.id);
+		var errorMsg 			= Ext.getCmp('ncforms.error_msg-' + this.config.id);
 		
 		switch (field.value) {
 		
@@ -80,6 +87,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputValidate.show();
 				inputDefaultValue.show();
 				label.show();
+				errorMsg.show();
 				break;
 				
 			case 'checkbox':	
@@ -89,6 +97,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputValidate.show();
 				inputDefaultValue.show();
 				label.show();
+				errorMsg.show();
 				break;
 			case 'hidden':
 				placeholder.hide();
@@ -96,6 +105,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputValidate.hide();
 				inputDefaultValue.hide();
 				label.hide();
+				errorMsg.hide();
 				break;
 				
 			default:
@@ -105,6 +115,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputValidate.show();
 				inputDefaultValue.hide();
 				label.show();
+				errorMsg.show();
 		}
 	}
 });

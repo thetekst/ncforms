@@ -2,6 +2,7 @@
 $snips = array(
     'NcForms' => 'NcForms helper snippet that generates the form.',
     'Add2DB' => 'NcForms hook to save form to database.',
+    'requiredCustom' => 'Custom required validator',
 );
 
 $snippets = array();

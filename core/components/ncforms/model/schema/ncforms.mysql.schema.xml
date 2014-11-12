@@ -33,6 +33,7 @@
 			<field key="input_wrapper_tag_id" dbtype="text" phptype="string" null="true" />
 			<field key="type" dbtype="enum" phptype="string" null="false" precision="'text','textarea','select','checkbox','radio','hidden'" default="text" />
 			<field key="order_id" dbtype="int" precision="10" phptype="integer" null="true" default="" />
+			<field key="error_msg" dbtype="text" phptype="string" null="false" />
 
 			<index alias="order_id" name="order_id" primary="false" unique="false" type="BTREE">
 				<column key="order_id" length="" collation="A" null="false" />

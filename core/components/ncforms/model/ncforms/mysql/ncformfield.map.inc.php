@@ -18,6 +18,7 @@ $xpdo_meta_map['NcFormField']= array (
     'input_wrapper_tag_id' => NULL,
     'type' => 'text',
     'order_id' => 0,
+    'error_msg' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -108,6 +109,12 @@ $xpdo_meta_map['NcFormField']= array (
       'phptype' => 'integer',
       'null' => true,
       'default' => 0,
+    ),
+    'error_msg' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
     ),
   ),
   'indexes' => 

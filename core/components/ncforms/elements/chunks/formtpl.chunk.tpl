@@ -1,5 +1,6 @@
 [[!FormIt?
 	&hooks=`[[+hooks]]`
+	&customValidators=`requiredCustom`
 	&validate=`[[+validate]]`
 	&emailTpl=`[[+emailTpl]]`
 	&emailTo=`[[+email]]`
