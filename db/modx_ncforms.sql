@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2014 at 01:53 PM
+-- Generation Time: Nov 12, 2014 at 12:53 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.3.13
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `modx_delete`
+-- Database: `modx_package_test`
 --
 
 -- --------------------------------------------------------
@@ -35,20 +35,21 @@ CREATE TABLE IF NOT EXISTS `modx_ncforms` (
   `success_message` text,
   `spam_hook` int(1) unsigned NOT NULL DEFAULT '1',
   `recaptcha_hook` int(1) unsigned NOT NULL DEFAULT '1',
+  `redirect_id` int(11) unsigned DEFAULT '0',
   `identifier` varchar(255) DEFAULT '',
   `hooks` text,
   `action_button` varchar(255) DEFAULT '',
   `properties` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `modx_ncforms`
 --
 
-INSERT INTO `modx_ncforms` (`id`, `name`, `save_method`, `redirect_or_msg`, `email`, `success_message`, `spam_hook`, `recaptcha_hook`, `identifier`, `hooks`, `action_button`, `properties`) VALUES
-(3, 'second', 'database_email', 'redirect', 'dmitry.tkachenko@NetCracker.com', 'this success message', 1, 1, 'SecondForm', '', 'ok', ''),
-(9, 'form3', 'database', 'success_message', 'mail@mail.ru', 'success', 0, 0, 'form3', '', 'OK', '');
+INSERT INTO `modx_ncforms` (`id`, `name`, `save_method`, `redirect_or_msg`, `email`, `success_message`, `spam_hook`, `recaptcha_hook`, `redirect_id`, `identifier`, `hooks`, `action_button`, `properties`) VALUES
+(1, 'Один', 'database_email', 'success_message', 'dmitry.tkachenko@netcracker.com', 'good', 1, 1, 2, 'sdfsfds', '', 'sdfsdf', ''),
+(3, 'Два', 'database', 'success_message', '', 'ok', 1, 0, 0, 'twoform', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
