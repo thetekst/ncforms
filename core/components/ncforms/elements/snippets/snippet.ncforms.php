@@ -17,21 +17,6 @@ error_reporting(E_ALL);*/
 
 // file_put_contents('log.txt',"---\n".var_export($formArray,true)."\n---\n\n", FILE_APPEND);
 
-/* echo '<pre>';
-print_r($_SESSION['SUCCESS_MSG']);
-echo '</pre>'; */
-$sessionMsg = '';
-session_start();
-if (isset($_SESSION['SUCCESS_MSG'])) {
-	$sessionMsg = $_SESSION['SUCCESS_MSG'];
-	unset($_SESSION['SUCCESS_MSG']);
-	printf('<div class="clear-both"></div><p class="alert alert-success">%s</p>', $sessionMsg);
-	
-}
-/* echo '<pre>';
-print_r($_SESSION['SUCCESS_MSG']);
-echo '</pre>'; */
-
 $ncfs = $modx->getService(
 	'ncforms',
 	'NcForms',
@@ -60,7 +45,13 @@ $form = $ncforms->toArray();
 
 if(!is_array($form))
 	{die('Форма с id='.$id.' не найдена');}
-// file_put_contents('log.txt',"---\n".var_export($form,true)."\n---\n\n", FILE_APPEND);	
+	
+session_start();
+if (isset($_SESSION['SUCCESS_MSG'])) {
+	$form['showSuccessMsg'] = $_SESSION['SUCCESS_MSG'];
+	unset($_SESSION['SUCCESS_MSG']);
+}
+
 /* build fields query */
 $c = $modx->newQuery('NcFormField');
 $c->where(array(
