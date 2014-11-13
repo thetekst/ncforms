@@ -12,10 +12,8 @@ $xpdo_meta_map['NcFormField']= array (
     'placeholder' => NULL,
     'multiple' => 0,
     'required' => 0,
-    'input_name' => NULL,
     'input_value' => NULL,
     'input_default_value' => NULL,
-    'input_wrapper_tag_id' => NULL,
     'type' => 'text',
     'order_id' => 0,
     'error_msg' => NULL,
@@ -71,12 +69,6 @@ $xpdo_meta_map['NcFormField']= array (
       'null' => false,
       'default' => 0,
     ),
-    'input_name' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => true,
-    ),
     'input_value' => 
     array (
       'dbtype' => 'text',
@@ -84,12 +76,6 @@ $xpdo_meta_map['NcFormField']= array (
       'null' => true,
     ),
     'input_default_value' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'input_wrapper_tag_id' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',

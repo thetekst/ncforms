@@ -14,7 +14,6 @@
 		<field key="identifier" dbtype="varchar" precision="255" phptype="string" null="true" default="" />
         <field key="hooks" dbtype="text" precision="255" phptype="string" null="true" default="" />
         <field key="action_button" dbtype="varchar" precision="255" phptype="string" null="true" default="" />
-        <field key="properties" dbtype="text" precision="255" phptype="string" null="true" default="" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
                 <column key="id" collation="A" null="false" />
         </index>
@@ -27,10 +26,8 @@
 			<field key="placeholder" dbtype="text" phptype="string" null="true" />
 			<field key="multiple" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 			<field key="required" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-			<field key="input_name" dbtype="text" phptype="string" null="true" />
 			<field key="input_value" dbtype="text" phptype="string" null="true" />
 			<field key="input_default_value" dbtype="text" phptype="string" null="true" />
-			<field key="input_wrapper_tag_id" dbtype="text" phptype="string" null="true" />
 			<field key="type" dbtype="enum" phptype="string" null="false" precision="'text','textarea','select','checkbox','radio','hidden'" default="text" />
 			<field key="order_id" dbtype="int" precision="10" phptype="integer" null="true" default="" />
 			<field key="error_msg" dbtype="text" phptype="string" null="false" />

@@ -17,7 +17,7 @@ NcForms.grid.NcForms = function(config) {
 			,'identifier'
 			,'hooks'
 			,'action_button'
-			,'properties'
+			//,'properties'
 		]
         ,paging: true
         ,remoteSort: true

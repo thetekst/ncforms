@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2014 at 12:53 PM
+-- Generation Time: Nov 13, 2014 at 04:16 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.3.13
 
@@ -39,17 +39,16 @@ CREATE TABLE IF NOT EXISTS `modx_ncforms` (
   `identifier` varchar(255) DEFAULT '',
   `hooks` text,
   `action_button` varchar(255) DEFAULT '',
-  `properties` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `modx_ncforms`
 --
 
-INSERT INTO `modx_ncforms` (`id`, `name`, `save_method`, `redirect_or_msg`, `email`, `success_message`, `spam_hook`, `recaptcha_hook`, `redirect_id`, `identifier`, `hooks`, `action_button`, `properties`) VALUES
-(1, 'Один', 'database_email', 'success_message', 'dmitry.tkachenko@netcracker.com', 'good', 1, 1, 2, 'sdfsfds', '', 'sdfsdf', ''),
-(3, 'Два', 'database', 'success_message', '', 'ok', 1, 0, 0, 'twoform', '', '', '');
+INSERT INTO `modx_ncforms` (`id`, `name`, `save_method`, `redirect_or_msg`, `email`, `success_message`, `spam_hook`, `recaptcha_hook`, `redirect_id`, `identifier`, `hooks`, `action_button`) VALUES
+(1, 'Один', 'database_email', 'success_message', 'dmitry.tkachenko@netcracker.com', 'good', 1, 0, 2, '', '', ''),
+(3, 'Два', 'database', 'success_message', '', 'ok', 1, 0, 0, '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

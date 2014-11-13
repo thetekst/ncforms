@@ -18,7 +18,6 @@ $xpdo_meta_map['NcForm']= array (
     'identifier' => '',
     'hooks' => '',
     'action_button' => '',
-    'properties' => '',
   ),
   'fieldMeta' => 
   array (
@@ -114,14 +113,6 @@ $xpdo_meta_map['NcForm']= array (
     'action_button' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '255',
-      'phptype' => 'string',
-      'null' => true,
-      'default' => '',
-    ),
-    'properties' => 
-    array (
-      'dbtype' => 'text',
       'precision' => '255',
       'phptype' => 'string',
       'null' => true,

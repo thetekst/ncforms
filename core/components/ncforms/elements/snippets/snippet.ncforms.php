@@ -70,7 +70,6 @@ if(!is_array($ncfields))
 foreach ($ncfields as $field) {
 	$formArray = $field->toArray();
 // 	file_put_contents('log.txt',"---\n".var_export($formArray,true)."\n---\n\n", FILE_APPEND);
-//	if(empty($formArray['input_name'])) continue;
 	$tmp = $controls = '';
 	
 	// собираем строку для валидации
@@ -94,8 +93,6 @@ foreach ($ncfields as $field) {
 			$tmp = $ncfs->getChunk('inputText',$formArray);
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $tmp,
-//				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
-//				'input_name'		=> $formArray['input_name'],
 				'label'				=> $formArray['label'],
 				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
@@ -131,9 +128,7 @@ foreach ($ncfields as $field) {
 			
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 					'fields' 			=> $tmp,
-//					'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 					'label' 			=> $formArray['label'],
-//					'input_name'		=> $formArray['input_name'],
 					'required'			=> $formArray['required'],
 					'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
@@ -169,16 +164,13 @@ foreach ($ncfields as $field) {
 			
 			$tmp .= $ncfs->getChunk('inputControlsWrapper', array(
 					'controls'		=> $controls,
-//					'input_name'	=> $formArray['input_name'],
 					'multiple'		=> $formArray['multiple'],
 					'field_id'		=> $formArray['id']
 			));
 			
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $tmp,
-//				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 				'label' 			=> $formArray['label'],
-//				'input_name'		=> $formArray['input_name'],
 				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
@@ -212,13 +204,11 @@ foreach ($ncfields as $field) {
 			$wrapSelectTag = $ncfs->getChunk('inputSelect', array(
 				'option' 		=> $tmp,
 				'multiple' 		=> $formArray['multiple'],
-//				'input_name' 	=> $formArray['input_name'],
 				'field_id' 		=> $formArray['id'])
 			);
 			
 			$controls .= $ncfs->getChunk('inputControlsWrapper', array(
 					'controls'		=> $wrapSelectTag,
-//					'input_name'	=> $formArray['input_name'],
 					'multiple'		=> $formArray['multiple'],
 					'type'			=> $formArray['type'],
 					'field_id'		=> $formArray['id']
@@ -226,9 +216,7 @@ foreach ($ncfields as $field) {
 			
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $controls,
-//				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
 				'label' 			=> $formArray['label'],
-//				'input_name'		=> $formArray['input_name'],
 				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
 				));
@@ -244,8 +232,6 @@ foreach ($ncfields as $field) {
 			$tmp = $ncfs->getChunk('inputTextArea',$formArray);
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $tmp,
-//				'inputWrapperTagId' => $formArray['input_wrapper_tag_id'],
-//				'input_name'		=> $formArray['input_name'],
 				'label'				=> $formArray['label'],
 				'required'			=> $formArray['required'],
 				'field_id'			=> sprintf('field%s',$formArray['id'])
@@ -258,7 +244,6 @@ foreach ($ncfields as $field) {
 	}
 	
 	$reqSeparator = ',';
-	//$fieldsDefaultValuesArray[$formArray['input_name']] = $input_default_values;
 }
 $recaptchaHook = $form['recaptcha_hook'] ? ',recaptcha' : null;
 $emailHook = !strcasecmp('database_email', $form['save_method']) ? ',email' : null;
