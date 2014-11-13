@@ -75,7 +75,6 @@ NcForms.window.CreateNcForm = function(config) {
             ,fieldLabel: ('Identifier')
             ,name: 'identifier'
             ,width: 300
-			,allowBlank: false
         },{
             xtype: 'textfield'
             ,fieldLabel: ('Hooks')

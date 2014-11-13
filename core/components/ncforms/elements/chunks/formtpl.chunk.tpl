@@ -13,7 +13,7 @@
 [[+showSuccessMsg:notempty=`<p class="bg-success">[[+showSuccessMsg]]</p>`]]
 [[!+fi.validation_error_message:notempty=`<p class="bg-danger">[[!+fi.validation_error_message]]</p>`]]
 
-<form action="[[~[[*id]]]]" id="[[!+identifier]]" class="form-horizontal contact_form" role="form" method="post">
+<form action="[[~[[*id]]]]" id="[[!+identifier:default=`Form[[+id]]`]]" class="form-horizontal contact_form" role="form" method="post">
 	[[+isSpamHook:notempty=`<input type="hidden" name="nospam:blank" value="[[!+fi.nospam]]" />`]]
 	<fieldset>
 		[[+fields]]

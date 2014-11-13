@@ -1,4 +1,4 @@
-<div class="form-group [[+outer_class]] [[+error_class]]" id="[[+identifier]]_wrap">
+<div class="form-group [[+outer_class]] [[+error_class]]" id="[[!+identifier:default=`Form[[+id]]`]]_wrap">
 <label for="recaptcha_response_field" class="col-md-3 control-label">
     Security Code <span class="text-danger">*</span>
     <br>
