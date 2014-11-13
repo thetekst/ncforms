@@ -32,6 +32,7 @@ $formTpl = $modx->getOption('formTpl',$scriptProperties,'formTpl');
 $id = $modx->getOption('id', $scriptProperties, null);
 $sort = $modx->getOption('sort',$scriptProperties,'order_id');
 $dir = $modx->getOption('dir',$scriptProperties,'ASC');
+$formitRecaptchaPK = $modx->getOption('formit.recaptcha_public_key');
 
 $form = $fieldsArray = $fieldsDefaultValuesArray = array();
 $fields = $validate = '';
@@ -51,6 +52,7 @@ if (isset($_SESSION['SUCCESS_MSG'])) {
 	$form['showSuccessMsg'] = $_SESSION['SUCCESS_MSG'];
 	unset($_SESSION['SUCCESS_MSG']);
 }
+$form['formitRecaptchaPK'] = $formitRecaptchaPK;
 
 /* build fields query */
 $c = $modx->newQuery('NcFormField');
