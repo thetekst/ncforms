@@ -73,7 +73,7 @@ foreach ($ncfields as $field) {
 	$tmp = $controls = '';
 	
 	// собираем строку для валидации
-	if($formArray['required']) {
+	if(!empty($formArray['required'])) {
 		$validate .= $reqSeparator.sprintf('field%s:requiredCustom=^%s^', $formArray['id'], $formArray['error_msg']);
 	}
 	
@@ -86,8 +86,12 @@ foreach ($ncfields as $field) {
 		case 'text':
 			$formArray['input_value'] = isset($_POST['field'.$formArray['id']]) ? $_POST['field'.$formArray['id']] : $formArray['input_value'];
 			
-			if($formArray['required']) {
-				$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+			if(!empty($formArray['validation'])) {
+				if(!empty($formArray['required'])) {
+					$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+				} else {
+					$validate .= $reqSeparator.sprintf('field%s:%s', $formArray['id'], $formArray['validation']);
+				}
 			}
 			
 			$tmp = $ncfs->getChunk('inputText',$formArray);
@@ -225,8 +229,12 @@ foreach ($ncfields as $field) {
 		case 'textarea':
 			$input_default_values = $formArray['input_value'] = isset($_POST['field'.$formArray['id']]) ? $_POST['field'.$formArray['id']] : $formArray['input_value'];
 			
-			if($formArray['required']) {
-				$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+			if(!empty($formArray['validation'])) {
+				if(!empty($formArray['required'])) {
+					$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+				} else {
+					$validate .= $reqSeparator.sprintf('field%s:%s', $formArray['id'], $formArray['validation']);
+				}
 			}
 			
 			$tmp = $ncfs->getChunk('inputTextArea',$formArray);
