@@ -50,36 +50,6 @@ NcForms.grid.NcForms = function(config) {
             ,sortable: false
             ,width: 350
             ,editor: { xtype: 'textfield' }
-        },{
-            header: ('Success message')
-            ,dataIndex: 'success_message'
-            ,sortable: false
-            ,width: 350
-            ,editor: { xtype: 'textfield' }
-        },{
-            header: ('Identifier')
-            ,dataIndex: 'identifier'
-            ,sortable: false
-            ,width: 350
-            ,editor: { xtype: 'textfield' }
-        },{
-            header: ('Hooks')
-            ,dataIndex: 'hooks'
-            ,sortable: false
-            ,width: 350
-            ,editor: { xtype: 'textfield' }
-        },{
-            header: ('Action button name')
-            ,dataIndex: 'action_button'
-            ,sortable: false
-            ,width: 350
-            ,editor: { xtype: 'textfield' }
-        },{
-            header: ('Properties')
-            ,dataIndex: 'properties'
-            ,sortable: false
-            ,width: 350
-            ,editor: { xtype: 'textfield' }
         }]
 		// форма для поиска
 		,tbar:[{
