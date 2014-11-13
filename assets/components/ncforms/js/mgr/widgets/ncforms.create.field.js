@@ -10,63 +10,70 @@ NcForms.window.CreateNcField = function(config) {
             action: 'mgr/ncform/createField'
         }
         ,fields: [{
-            xtype: 'hidden'
-            ,name: 'form_id'
-			,value: config.form_id
-        },{
-            xtype: 'ncforms-combo-type'
-			,id: 'ncforms-types-' + config.id
-			,fieldLabel: ('Type')
-			,name: 'type'
-			,hiddenName: 'type'
-			,anchor: '100%'
-			,value: 'text'
-			,listeners: {
-				'select': { fn: this.fieldSets, scope: this }
-				,'render': { fn: this.fieldSets, scope: this }
+				xtype: 'hidden'
+				,name: 'form_id'
+				,value: config.form_id
+			},{
+				xtype: 'ncforms-combo-type'
+				,id: 'ncforms-types-' + config.id
+				,fieldLabel: ('Type')
+				,name: 'type'
+				,hiddenName: 'type'
+				,anchor: '100%'
+				,value: 'text'
+				,listeners: {
+					'select': { fn: this.fieldSets, scope: this }
+					,'render': { fn: this.fieldSets, scope: this }
+				}
+			},{
+				xtype: 'textfield'
+				,id: 'ncforms.label-' + config.id
+				,fieldLabel: ('Label')
+				,name: 'label'
+				,width: 300
+			},{
+				xtype: 'textfield'
+				,fieldLabel: ('Input value')
+				,name: 'input_value'
+				,width: 300
+			},{
+				xtype: 'textfield'
+				,id: 'ncforms.input_default_value-' + config.id
+				,fieldLabel: ('Input default value')
+				,name: 'input_default_value'
+				,width: 300
+			},{
+				xtype: 'textfield'
+				,id: 'ncforms.placeholder-' + config.id
+				,fieldLabel: ('Placeholder')
+				,name: 'placeholder'
+				,width: 300
+			},{
+				xtype: 'checkbox'
+				,id: 'ncforms.multiple-' + config.id
+				,fieldLabel: ('Multiple')
+				,name: 'multiple'
+				,anchor: '100%'
+			},{
+				xtype: 'checkbox'
+				,id: 'ncforms.required-' + config.id
+				,fieldLabel: ('Required')
+				,name: 'required'
+				,anchor: '100%'
+			},{
+				xtype: 'textfield'
+				,id: 'ncforms.error_msg-' + config.id
+				,fieldLabel: ('Error message')
+				,name: 'error_msg'
+				,anchor: '100%'
+			},{
+				xtype: 'ncforms-combo-validation'
+				,id: 'ncforms.validation-' + config.id
+				,fieldLabel: ('Validation')
+				,name: 'validation'
+				,anchor: '100%'
 			}
-        },{
-			xtype: 'textfield'
-			,id: 'ncforms.label-' + config.id
-			,fieldLabel: ('Label')
-			,name: 'label'
-			,width: 300
-		},{
-			xtype: 'textfield'
-			,fieldLabel: ('Input value')
-			,name: 'input_value'
-			,width: 300
-		},{
-			xtype: 'textfield'
-			,id: 'ncforms.input_default_value-' + config.id
-			,fieldLabel: ('Input default value')
-			,name: 'input_default_value'
-			,width: 300
-		},{
-			xtype: 'textfield'
-			,id: 'ncforms.placeholder-' + config.id
-			,fieldLabel: ('Placeholder')
-			,name: 'placeholder'
-			,width: 300
-		},{
-			xtype: 'checkbox'
-			,id: 'ncforms.multiple-' + config.id
-			,fieldLabel: ('Multiple')
-			,name: 'multiple'
-			,anchor: '100%'
-		},{
-			xtype: 'checkbox'
-			,id: 'ncforms.required-' + config.id
-			,fieldLabel: ('Required')
-			,name: 'required'
-			,anchor: '100%'
-		},{
-			xtype: 'textfield'
-			,id: 'ncforms.error_msg-' + config.id
-			,fieldLabel: ('Error message')
-			,name: 'error_msg'
-			,anchor: '100%'
-		}]
+		]
     });
     NcForms.window.CreateNcField.superclass.constructor.call(this,config);
 };
@@ -78,6 +85,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 		var inputDefaultValue 	= Ext.getCmp('ncforms.input_default_value-' + this.config.id);
 		var label 				= Ext.getCmp('ncforms.label-' + this.config.id);
 		var errorMsg 			= Ext.getCmp('ncforms.error_msg-' + this.config.id);
+		var validation 			= Ext.getCmp('ncforms.validation-' + this.config.id);
 		
 		switch (field.value) {
 		
@@ -88,6 +96,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
+				validation.hide();
 				break;
 				
 			case 'checkbox':	
@@ -98,6 +107,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
+				validation.hide();
 				break;
 			case 'hidden':
 				placeholder.hide();
@@ -106,6 +116,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputDefaultValue.hide();
 				label.hide();
 				errorMsg.hide();
+				validation.hide();
 				break;
 				
 			default:
@@ -116,6 +127,7 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				inputDefaultValue.hide();
 				label.show();
 				errorMsg.show();
+				validation.show();
 		}
 	}
 });

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2014 at 08:30 PM
+-- Generation Time: Nov 13, 2014 at 01:34 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.3.13
 
@@ -41,17 +41,17 @@ CREATE TABLE IF NOT EXISTS `modx_ncforms_fields` (
   `order_id` int(10) DEFAULT '0',
   `error_msg` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `modx_ncforms_fields`
 --
 
 INSERT INTO `modx_ncforms_fields` (`id`, `form_id`, `label`, `placeholder`, `multiple`, `required`, `input_name`, `input_value`, `input_default_value`, `input_wrapper_tag_id`, `type`, `order_id`, `error_msg`) VALUES
-(1, 1, 'First name', 'First name', 0, 1, 'FIRST_NAME', '', '', 'FIRST_ID_WR', 'text', 0, 'Name is required'),
+(1, 1, 'First name', 'First name', 0, 1, 'FIRST_NAME', '', '', 'FIRST_ID_WR', 'text', 0, 'Name is required!'),
 (2, 1, 'Check shapes', '', 0, 1, 'CHECKBOX', 'Circle=circle||Triangle=triangle||Rectangle=rectangle', 'triangle||circle', 'CHECKBOX_WR', 'checkbox', 1, ''),
-(3, 1, 'Select colors', '', 0, 1, 'RADIO', 'Red=red||Blue=blue||Black=black', '', 'RADIO_WR', 'radio', 2, ''),
-(4, 1, 'My textarea', 'My textarea one', 0, 1, 'TEXTAREA', '', 'type', 'TEXTAREA_WR', 'textarea', 3, 'error no!'),
+(3, 1, 'Select colors', '', 0, 0, 'RADIO', 'Red=red||Blue=blue||Black=black', '', 'RADIO_WR', 'radio', 2, ''),
+(4, 1, 'My textarea', 'My textarea one', 0, 0, 'TEXTAREA', '', 'type', 'TEXTAREA_WR', 'textarea', 3, 'error no!'),
 (5, 1, NULL, NULL, 0, 0, 'HIDDEN_NAME', 'hidden_value', NULL, NULL, 'hidden', 4, ''),
 (6, 1, 'Pleace select country', '', 1, 1, 'SELECT_COUNTRY', 'Russia=russia||Egypt=egypt||Spain=spain', 'spain', 'COUNTRY_WR', 'select', 5, ''),
 (7, 9, 'Имя', 'name', 0, 1, 'name', '', '', 'namewr', 'text', 0, ''),

@@ -92,3 +92,35 @@ NcForms.combo.TypeNcForm = function(config) {
 };
 Ext.extend(NcForms.combo.TypeNcForm,MODx.combo.ComboBox);
 Ext.reg('ncforms-combo-type',NcForms.combo.TypeNcForm);
+
+/*******************************************************************************/
+
+NcForms.combo.ValidationField = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+		name: 'validation'
+		,triggerAction: 'all'
+		,lazyRender: true
+		,hiddenName: 'validation'
+		,mode: 'local'
+        ,store: new Ext.data.ArrayStore({
+            id: 0
+            ,fields: ['id','name']
+            ,data: [
+                // ['text', ('ncforms.form.type.text')]
+                // ,['textarea', ('ncforms.form.type.textarea')]
+				['', 'None']
+				,['email', 'Email']
+                ,['isNumber', 'Number']
+            ]
+        })
+        ,displayField: 'name'
+        ,valueField: 'id'
+		,fields: ['id', 'name']
+		,editable: false
+		,value: ''
+    });
+    NcForms.combo.ValidationField.superclass.constructor.call(this,config);
+};
+Ext.extend(NcForms.combo.ValidationField,MODx.combo.ComboBox);
+Ext.reg('ncforms-combo-validation',NcForms.combo.ValidationField);

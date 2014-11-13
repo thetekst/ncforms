@@ -63,6 +63,12 @@ NcForms.window.UpdateNcFields = function(config) {
 				,fieldLabel: ('Error message')
 				,name: 'error_msg'
 				,anchor: '100%'
+			},{
+				xtype: 'ncforms-combo-validation'
+				,id: 'ncforms.validation-' + config.id
+				,fieldLabel: ('Validation')
+				,name: 'validation'
+				,anchor: '100%'
 			}
 		]
     });
@@ -84,6 +90,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
         var inputDefaultValue 	= Ext.getCmp('ncforms.input_default_value-' + this.config.id);
 		var label 				= Ext.getCmp('ncforms.label-' + this.config.id);
 		var errorMsg 			= Ext.getCmp('ncforms.error_msg-' + this.config.id);
+		var validation 			= Ext.getCmp('ncforms.validation-' + this.config.id);
 		
 		switch (field.value) {
 		
@@ -94,6 +101,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
+				validation.hide();
 				break;
 				
 			case 'checkbox':	
@@ -104,6 +112,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 				inputDefaultValue.show();
 				label.show();
 				errorMsg.show();
+				validation.hide();
 				break;
 			case 'hidden':
 				placeholder.hide();
@@ -112,6 +121,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 				inputDefaultValue.hide();
 				label.hide();
 				errorMsg.hide();
+				validation.hide();
 				break;
 				
 			default:
@@ -122,6 +132,7 @@ Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 				inputDefaultValue.hide();
 				label.show();
 				errorMsg.show();
+				validation.show();
 		}
 	}
 });

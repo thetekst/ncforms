@@ -87,6 +87,10 @@ foreach ($ncfields as $field) {
 		case 'text':
 			$formArray['input_value'] = isset($_POST['field'.$formArray['id']]) ? $_POST['field'.$formArray['id']] : $formArray['input_value'];
 			
+			if($formArray['required']) {
+				$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+			}
+			
 			$tmp = $ncfs->getChunk('inputText',$formArray);
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $tmp,
@@ -233,6 +237,10 @@ foreach ($ncfields as $field) {
 		case 'textarea':
 			$input_default_values = $formArray['input_value'] = isset($_POST['field'.$formArray['id']]) ? $_POST['field'.$formArray['id']] : $formArray['input_value'];
 			
+			if($formArray['required']) {
+				$validate .= !empty($formArray['validation']) ? sprintf(':%s', $formArray['validation']) : '';
+			}
+			
 			$tmp = $ncfs->getChunk('inputTextArea',$formArray);
 			$form['fields'] .= $ncfs->getChunk('inputWrapper', array(
 				'fields' 			=> $tmp,
@@ -273,6 +281,7 @@ $settingsArray = array(
 	,'isRecaptcha'				=> $recaptchaHook
 );
 // echo 'hooks: '.$hooks.'<br>';
+// echo 'validate: '.$rmCommaValidate.'<br>';
 
 foreach($settingsArray as $key => $val) {
 	$form[$key] = $val;

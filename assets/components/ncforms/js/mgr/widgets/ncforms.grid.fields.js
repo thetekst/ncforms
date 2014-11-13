@@ -26,6 +26,7 @@ NcForms.grid.NcFields = function(config) {
 			,'required'
 			,'placeholder'
 			,'error_msg'
+			,'validation'
 		]
         ,paging: true
         ,remoteSort: false
