@@ -84,11 +84,23 @@ NcForms.window.UpdateNcFields = function(config) {
     this.on('show', function () {
 		var typeField = Ext.getCmp('ncforms-types-' + this.config.id);
 		this.fieldSets(typeField);
+		var required = Ext.getCmp('ncforms.required-' + this.config.id);
+		this.firstLoadrequiredFieldErrorMsgField(required);
     });
 };
 Ext.extend(NcForms.window.UpdateNcFields,MODx.Window, {
 	
-	requiredFieldErrorMsgField: function (field, checked) {
+	firstLoadrequiredFieldErrorMsgField: function (field, checked) {
+		var errorMsg = Ext.getCmp('ncforms.error_msg-' + this.config.id);
+		var reqVal = field.getValue();
+		if(reqVal) {
+			errorMsg.show();
+		}
+		else {
+			errorMsg.hide();
+		}
+	}
+	,requiredFieldErrorMsgField: function (field, checked) {
 		var errorMsg = Ext.getCmp('ncforms.error_msg-' + this.config.id);
 		if(checked)
 			errorMsg.show();
