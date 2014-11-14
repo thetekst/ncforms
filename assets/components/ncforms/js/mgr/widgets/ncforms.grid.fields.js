@@ -59,6 +59,17 @@ NcForms.grid.NcFields = function(config) {
             ,sortable: true
             ,width: 350
 			,editor: { xtype: 'textfield' }
+        },{
+            header: ('Required')
+            ,dataIndex: 'required'
+            ,sortable: true
+            ,width: 50
+			,editor: { xtype: 'modx-combo-boolean', renderer: 'boolean' }
+        },{
+            header: ('Validation')
+            ,dataIndex: 'validation'
+            ,sortable: true
+            ,width: 100
         }]
 		// форма для поиска
 		,tbar:[{
