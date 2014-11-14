@@ -60,12 +60,16 @@ NcForms.window.CreateNcField = function(config) {
 				,fieldLabel: ('Required')
 				,name: 'required'
 				,anchor: '100%'
+				,listeners: {
+					'check': { fn: this.requiredFieldErrorMsgField, scope: this }
+				}
 			},{
 				xtype: 'textfield'
 				,id: 'ncforms.error_msg-' + config.id
 				,fieldLabel: ('Error message')
 				,name: 'error_msg'
 				,anchor: '100%'
+				,hidden: true
 			},{
 				xtype: 'ncforms-combo-validation'
 				,id: 'ncforms.validation-' + config.id
@@ -78,13 +82,20 @@ NcForms.window.CreateNcField = function(config) {
     NcForms.window.CreateNcField.superclass.constructor.call(this,config);
 };
 Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
-	fieldSets: function (field, record, i) {
+	
+	requiredFieldErrorMsgField: function (field, checked) {
+		var errorMsg = Ext.getCmp('ncforms.error_msg-' + this.config.id);
+		if(checked)
+			errorMsg.show();
+		else
+			errorMsg.hide();
+	}
+	,fieldSets: function (field, record, i) {
         var placeholder 		= Ext.getCmp('ncforms.placeholder-' + this.config.id);
         var multiple 			= Ext.getCmp('ncforms.multiple-' + this.config.id);
-        var required 		= Ext.getCmp('ncforms.required-' + this.config.id);
+        var required 			= Ext.getCmp('ncforms.required-' + this.config.id);
 		var inputDefaultValue 	= Ext.getCmp('ncforms.input_default_value-' + this.config.id);
 		var label 				= Ext.getCmp('ncforms.label-' + this.config.id);
-		var errorMsg 			= Ext.getCmp('ncforms.error_msg-' + this.config.id);
 		var validation 			= Ext.getCmp('ncforms.validation-' + this.config.id);
 		
 		switch (field.value) {
@@ -95,7 +106,6 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				required.show();
 				inputDefaultValue.show();
 				label.show();
-				errorMsg.show();
 				validation.hide();
 				break;
 				
@@ -106,7 +116,6 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				required.show();
 				inputDefaultValue.show();
 				label.show();
-				errorMsg.show();
 				validation.hide();
 				break;
 			case 'hidden':
@@ -115,7 +124,6 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				required.hide();
 				inputDefaultValue.hide();
 				label.hide();
-				errorMsg.hide();
 				validation.hide();
 				break;
 				
@@ -126,7 +134,6 @@ Ext.extend(NcForms.window.CreateNcField,MODx.Window, {
 				required.show();
 				inputDefaultValue.hide();
 				label.show();
-				errorMsg.show();
 				validation.show();
 		}
 	}
